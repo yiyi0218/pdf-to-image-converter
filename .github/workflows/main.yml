@@ -26,15 +26,15 @@ jobs:
         run: |
           python -c "
           import fitz
-          doc = fitz.open('input.pdf')
+          doc = fitz.open('直发梳ZFQ-P35D1说明书-转0525.pdf')
           page = doc.load_page(0)
           pix = page.get_pixmap(matrix=fitz.Matrix(4, 4))
-          pix.save('output.png')
+          pix.save('output1.png')
           print('转换完成！')
           "
 
       - name: Upload output image
         uses: actions/upload-artifact@v4
         with:
-          name: output-image
-          path: output.png
+          name: output1-image
+          path: output1.png
